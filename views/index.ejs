@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Joke Generator</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Wanna hear joke? ✌️</h1>
+    <form action="/" id="form" class="form" method="POST">
+      <select name="type" class="form-select">
+        <option value="any" data-display="Select">Random type</option>
+        <option value="programming">Programming</option>
+        <option value="misc">Misc</option>
+        <option value="pun">Pun</option>
+        <option value="spooky">Spooky</option>
+        <option value="Christmas">Christmas</option>
+      </select>
+      <button type="submit" class="form-submit">Go</button>
+    </form>
+    <section class="cards">
+      <% if (locals.content.joke){ %>
+        <%= content.joke %>
+      <% } else { %>
+        <%= content.setup %>
+        <hr>
+        <%= content.delivery %>
+      <% } %>
+    </section>
+  </div>
+</body>
+</html>
