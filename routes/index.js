@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
         res.render("index.ejs", { content: response.data });
     } catch (error) {
         console.error("Failed to make request:", error.message);
-        res.redirect('/');
+        res.status(422).render("index.ejs", { error: error.message });
     }
 });
 
